@@ -1,0 +1,123 @@
+@font-face {
+	font-family: 'Raleway', sans-serif;
+	src: url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+}
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #45505b;
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 120px;
+      height: 1px;
+      background: #ddd;
+      bottom: 1px;
+      left: calc(50% - 60px);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #0563bb;
+      bottom: 0;
+      left: calc(50% - 20px);
+    }
+  }
+  p {
+    margin-bottom: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #45505b;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.pb-0 { padding-bottom: 0 !important; }
+.mb-8 { margin-bottom: 8px; }
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  overflow: hidden;
+  vertical-align: -.15em;
+}
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+
+.shuffleMedium-move {
+  transition: transform 1s;
+}
+
+.shuffleFast-move {
+  transition: transform 0.5s;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s ease-in-out;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+.fade-animate {
+  opacity: 0;
+  transform: translate(10px, -10px);
+  transition: all .3s ease-in-out;
+  &.is-active {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.fade-animate-bottom {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all .4s ease-in-out;
+  &.is-active {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

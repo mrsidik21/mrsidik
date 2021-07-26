@@ -1,0 +1,225 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+.trigger-menu-mobile {
+  display: flex;
+  justify-content: flex-end;
+  height: 48px;
+  align-items: center;
+  z-index: 2;
+  position: fixed;
+  top: 0px;
+  right: 28px;
+  button {
+    border-radius: 50%;
+    border: 0;
+    background-color: #FFF;// #0563BB;
+    color: #45505B;
+    // box-shadow: 2px 2px 12px rgba(0, 0, 0, .3);
+    // height: 40px;
+    // width: 32px;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    // border: 1px solid #FFF;
+    transition: all .3s ease-in-out;
+  }
+  &:hover {
+    button {
+      // box-shadow: none;
+      // border: 1px solid #45505B80;
+    }
+  }
+  &.is-active {
+    button {
+      color: #0563BB !important;
+    }
+  }
+}
+nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+nav > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+nav .link-web,
+nav .link-mobile {
+  text-decoration: none;
+  color: inherit;
+  text-transform: capitalize;
+  align-items: center;
+  justify-content: center;
+  color: #45505b;
+  padding: 0px 0px;
+  margin-bottom: 8px;
+  border-radius: 50px;
+  background-color: #F2F3F5;
+  height: 56px;
+  width: 100%;
+  outline: none;
+  transition: background-color .3s ease-in-out .1s, color .3s ease-in-out, width .35s ease-in-out;
+  &:hover {
+    background-color: #0563bb;
+    color: #FFF;
+    padding: 0 0 0 18px;
+    .menu-text {
+      width: 100%;
+      margin-left: 8px;
+    }
+  }
+  &.is-active {
+    background-color: #0563bb;
+    color: #FFF;
+  }
+  .menu-text {
+    margin-left: 0px;
+    width: 0;
+  }
+}
+.menu-icon {
+  font-size: 20px;
+}
+.menu-text {
+  overflow: hidden;
+  margin-left: 8px;
+  font-size: 16px;
+}
+.link-mobile {
+  display: none;
+}
+.link-web {
+  display: flex;
+}
+
+.dropdown {
+  position: relative;
+  .dropdown-trigger {
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .dropdown-menu {
+    background-color: #FFF;
+    position: absolute;
+    top: calc(100% + 0px);
+    right: 0;
+    width: 116px;
+    height: 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+    transition: all .15s ease-in-out;
+    &.is-active {
+      height: 72px;
+      padding: 8px 0;
+    }
+  }
+  .dropdown-item {
+    padding: 4px 16px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #45505B;
+    cursor: pointer;
+    .icon {
+      font-size: 24px;
+    }
+    &:hover,
+    &.is-active {
+      color: #0563bb;
+    }
+  }
+}
+.text-lg {
+  font-size: 24px !important;
+}
+@media screen and (min-width: 769px) {
+  .link-web {
+    display: flex;
+  }
+  nav .link-web {
+    width: 56px;
+    &:hover {
+      width: 100%;
+    }
+  }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+@media screen and (max-width: 768px) {
+  .trigger-menu-mobile {
+    height: 48px;
+    padding: -6px -8px;
+    top: 0;
+    left: 0;
+    right: 17px;
+    // background-color: #FFF;
+    // border: 1px solid #F2F3F5;
+    z-index: 2;
+    .left,
+    .right {
+      padding: 0px 8px;
+    }
+    &.is-active {
+      right: 10px;
+      right: 0px;
+    }
+  }
+
+  .navigation {
+    top: 0;
+    bottom: 0;
+    right: unset;
+    padding: 15px;
+    left: -320px;
+    background-color: #FFF;
+    width: 260px;
+    border-right: 1px solid #e6e9ec;
+    transition: left .3s ease-in-out;
+    &.is-active {
+      left: 0;
+    }
+  }
+
+  .link-web {
+    display: none;
+  }
+
+  .link-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    padding: 0px 18px !important;
+    border-right: 1px solid #e6e9ec;
+    width: calc(100% - 36px) !important;
+    .menu-text {
+      width: auto !important;
+      margin-left: 8px !important;
+      font-size: 15px;
+    }
+    &.is-active {
+      background-color: #0563bb !important;
+      color: #FFF !important;
+    }
+  }
+}
