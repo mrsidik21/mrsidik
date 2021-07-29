@@ -30,7 +30,47 @@
           :key="'port' + n"
           :class="{ 'is-hidden': !portofolio.active }"
           class="col lg-3 portofolio my-8">
-          <img :src="'/static/img/' + portofolio.img" class="img-fluid" alt="">
+          <img
+            v-if="portofolio.img.includes('1.Pelaksana_001.jpg')"
+            :key="n"
+            src="/static/img/1.Pelaksana_001.jpg"
+            class="img-fluid"
+          />
+
+          <img
+            v-if="portofolio.img.includes('2.Menengah_001.jpg')"
+            :key="n"
+            src="/static/img/2.Menengah_001.jpg"
+            class="img-fluid"
+          />
+
+          <img
+            v-if="portofolio.img.includes('3.Lanjutan_001.jpg')"
+            :key="n"
+            src="/static/img/3.Lanjutan_001.jpg"
+            class="img-fluid"
+          />
+
+          <img
+            v-if="portofolio.img.includes('sertifikat excle_001.jpg')"
+            :key="n"
+            src="/static/img/sertifikat excle_001.jpg"
+            class="img-fluid"
+          />
+
+          <img
+            v-if="portofolio.img.includes('Scan Brevet_001.jpg')"
+            :key="n"
+            src="/static/img/Scan Brevet_001.jpg"
+            class="img-fluid"
+          />
+
+          <img
+            v-if="portofolio.img.includes('sertifikat akuntansi_001.jpg')"
+            :key="n"
+            src="/static/img/sertifikat akuntansi_001.jpg"
+            class="img-fluid"
+          />
           <div class="portofolio-wrap">
             <div class="portofolio-info">
               <div class="portofolio-name">

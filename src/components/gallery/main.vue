@@ -33,7 +33,64 @@
               <div class="title">
                 <h3>{{ detail.name }}</h3>
               </div>
-              <img v-for="(photo, n) in detail.photos" :key="n" :src="'/static/img/' + photo">
+              <template v-for="(photo, n) in detail.photos">
+                <img
+                  v-if="photo.includes('1.Pelaksana_001.jpg')"
+                  :key="n"
+                  src="/static/img/1.Pelaksana_001.jpg"
+                />
+                <img
+                  v-if="photo.includes('1.Pelaksana_002.jpg')"
+                  :key="n"
+                  src="/static/img/1.Pelaksana_002.jpg"
+                />
+
+                <img
+                  v-if="photo.includes('2.Menengah_001.jpg')"
+                  :key="n"
+                  src="/static/img/2.Menengah_001.jpg"
+                />
+                <img
+                  v-if="photo.includes('2.Menengah_002.jpg')"
+                  :key="n"
+                  src="/static/img/2.Menengah_002.jpg"
+                />
+
+                <img
+                  v-if="photo.includes('3.Lanjutan_001.jpg')"
+                  :key="n"
+                  src="/static/img/3.Lanjutan_001.jpg"
+                />
+                <img
+                  v-if="photo.includes('3.Lanjutan_002.jpg')"
+                  :key="n"
+                  src="/static/img/3.Lanjutan_002.jpg"
+                />
+
+                <img
+                  v-if="photo.includes('sertifikat excle_001.jpg')"
+                  :key="n"
+                  src="/static/img/sertifikat excle_001.jpg"
+                />
+
+                <img
+                  v-if="photo.includes('sertifikat akuntansi_001.jpg')"
+                  :key="n"
+                  src="/static/img/sertifikat akuntansi_001.jpg"
+                />
+
+                <img
+                  v-if="photo.includes('Scan Brevet_001.jpg.jpg')"
+                  :key="n"
+                  src="/static/img/Scan Brevet_001.jpg.jpg"
+                />
+
+                <img
+                  v-if="photo.includes('Scan Brevet_001.jpg')"
+                  :key="n"
+                  src="/static/img/Scan Brevet_002.jpg"
+                />
+              </template>
             </div>
           </transition>
         </div>

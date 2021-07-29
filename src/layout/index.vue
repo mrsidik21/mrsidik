@@ -2,7 +2,7 @@
   <div class="layout">
     <navigation ref="navigation"/>
     <div class="content">
-      <router-view/>
+      <Home />
     </div>
   </div>
 </template>

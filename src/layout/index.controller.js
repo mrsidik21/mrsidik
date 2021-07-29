@@ -1,8 +1,10 @@
 import Navigation from './navigation/main'
+import Home from '@/pages/home'
 export default {
   name: 'Layout',
   components: {
-    Navigation
+    Navigation,
+    Home
   },
   data() {
     return {
