@@ -12,6 +12,14 @@ export default {
       menus: this.$store.getters.menus
     }
   },
+  computed: {
+    activeTag() {
+      return this.$store.getters.tag
+    },
+    loading() {
+      return this.$store.getters.loading
+    }
+  },
   mounted() {
     const element = document.getElementById('layout')
     element.addEventListener('scroll', this.handleScroll)
@@ -24,23 +32,31 @@ export default {
     },
     handleScroll(e) {
       const links = [...document.getElementsByClassName('link-web')]
-      const active = [...links].find(x => x.className.includes('is-active'))
-      const key = [...links].findIndex(x => x.className.includes('is-active'))
 
-      if (!active.hash) return
+      links.map((link, key) => {
+        const name = link.getAttribute('href')
+        const target = document.getElementById(name.replace('#', ''))
 
-      const secitonActive = document.querySelector(active.hash).getBoundingClientRect()
+        if(!!!target) return
 
-      if (secitonActive.height < e.target.scrollTop && (secitonActive.top + secitonActive.height) > e.target.scrollTop) {
-        console.log('OK')
-        /*
-        active.classList.remove('is-active')
-        const nextActive = [...links][key + 1]
-        if (nextActive) {
-          nextActive.classList.add('is-active')
+        const targetOffsetTop = target.offsetTop
+
+        link.classList.remove('is-active')
+
+        if (name !== this.activeTag && target) {
+          const conditionOne = targetOffsetTop <= e.target.scrollTop
+          const conditionTwo = (targetOffsetTop + target.offsetHeight) > e.target.scrollTop
+          if (conditionOne && conditionTwo) {
+            link.classList.add('is-active')
+            this.$store.dispatch('setTag', name)
+          }
+        } else {
+          if (name === this.activeTag) {
+            link.classList.add('is-active')
+            this.$store.dispatch('setTag', name)
+          }
         }
-        */
-      }
+      })
     }
   }
 }

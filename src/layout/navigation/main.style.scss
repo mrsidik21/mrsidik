@@ -8,6 +8,10 @@
   flex-direction: column;
   justify-content: center;
   z-index: 3;
+  transition: left .3s ease-in-out;
+  &.on-loading {
+    left: -100%;
+  }
 }
 .trigger-menu-mobile {
   display: flex;
@@ -18,6 +22,7 @@
   position: fixed;
   top: 0px;
   right: 28px;
+  transition: top .3s ease-in-out;
   button {
     border-radius: 50%;
     border: 0;
@@ -42,6 +47,9 @@
     button {
       color: #0563BB !important;
     }
+  }
+  &.on-loading {
+    top: -100%;
   }
 }
 nav {

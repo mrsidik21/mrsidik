@@ -1,7 +1,11 @@
 <template>
   <div id="layout" class="layout">
     <navigation ref="navigation"/>
-    <div class="content">
+    <div
+      :class="[
+        'content',
+        { 'on-loading': loading }
+      ]">
       <Home />
     </div>
   </div>

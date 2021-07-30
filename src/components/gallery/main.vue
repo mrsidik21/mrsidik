@@ -80,13 +80,13 @@
                 />
 
                 <img
-                  v-if="photo.includes('Scan Brevet_001.jpg.jpg')"
+                  v-if="photo.includes('Scan Brevet_001.jpg')"
                   :key="n"
-                  src="/static/img/Scan Brevet_001.jpg.jpg"
+                  src="/static/img/Scan Brevet_001.jpg"
                 />
 
                 <img
-                  v-if="photo.includes('Scan Brevet_001.jpg')"
+                  v-if="photo.includes('Scan Brevet_002.jpg')"
                   :key="n"
                   src="/static/img/Scan Brevet_002.jpg"
                 />

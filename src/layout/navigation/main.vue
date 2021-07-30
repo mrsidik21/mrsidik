@@ -3,7 +3,7 @@
     <div
       :class="[
         'navigation',
-        { 'is-active': activeTriggerMenu && activeMobile }
+        { 'is-active': activeTriggerMenu && activeMobile}
       ]">
       <nav>
         <ul>
@@ -48,7 +48,7 @@
     <div
       :class="[
         'trigger-menu-mobile',
-        { 'is-active': activeTriggerMenu }
+        { 'is-active': activeTriggerMenu}
       ]">
       <div class="left">
         <div class="dropdown">
