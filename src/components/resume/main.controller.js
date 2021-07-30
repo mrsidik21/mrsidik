@@ -3,50 +3,26 @@ export default {
   data() {
     return {
       profiles: this.$store.getters.profiles,
-      language: this.$store.getters.language,
-      loading: this.$store.getters.loadedSection.resume ? false : true,
-      loadingPage: this.$store.getters.loadedSection.page
     }
   },
   computed: {
-    isTagMy() {
-      return this.$route.hash === '#resume'
-    },
     isMobile() {
       return this.$parent.$parent.$refs.navigation.activeMobile || window.innerWidth <= 768
+    },
+    language() {
+      return this.$store.getters.language
+    },
+    loading() {
+      return this.$store.getters.loading
     }
   },
   watch: {
-    loadingPage: {
-      handler(val) {},
-      immediate: true
-    },
-    isTagMy: {
-      async handler(val) {
-        if (!this.$store.getters.loadedSection.resume) {
-          if (val) {
-            const data = { ...this.$store.getters.loadedSection, resume: true }
-            this.$store.dispatch('setLoadedSection', data)
-            this.loading = true
-            await this.delay(300)
-            this.loading = false
-          } else {
-            this.loading = true
-          }
-        }
-      },
+    loading: {
+      handler() {},
       immediate: true
     }
   },
   methods: {
-    async handleLoading() {
-      if (!this.loadingPage && this.loading) {
-        await this.delay(2000)
-        const data = { ...this.$store.getters.loadedSection, resume: true }
-        this.$store.dispatch('SET_LOADED_SECTION', data)
-        this.loading = false
-      }
-    },
     delay (time) {
       return new Promise((resolve, reject) => {
         setTimeout(resolve, time)
@@ -64,7 +40,7 @@ export default {
           newRate += x
         }
       })
-      if (!this.isTagMy) return 0
+      if (this.loading) return 0
       return newRate
     }
   }

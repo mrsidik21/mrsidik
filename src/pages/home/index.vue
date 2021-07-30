@@ -4,31 +4,21 @@
 
     <sidik-gallery ref="gallery" />
 
-    <template v-for="(menu, n) in menus">
-      <section
-        :id="replaceTag(menu.link)"
-        :key="n">
-        <!--
-        @mouseenter="handleLoading"
-        -->
-        <sidik-hero
-          v-if="menu.label === 'home'"
-        />
-        <sidik-about
-          v-else-if="menu.label === 'about'"
-        />
-        <sidik-resume
-          v-else-if="menu.label === 'resume'"
-        />
-        <sidik-portofolio
-          v-else-if="menu.label === 'portofolio'"
-          @view="showingGallery"
-        />
-        <sidik-contact
-          v-else-if="menu.label === 'contact'"
-        />
-      </section>
-    </template>
+    <section id="hero">
+      <sidik-hero />
+    </section>
+    <section id="about">
+      <sidik-about />
+    </section>
+    <section id="resume">
+      <sidik-resume />
+    </section>
+    <section id="portofolio">
+      <sidik-portofolio @view="showingGallery" />
+    </section>
+    <section id="contact">
+      <sidik-contact />
+    </section>
     <footer>
       <sidik-footer/>
     </footer>

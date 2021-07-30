@@ -2,6 +2,7 @@ const getters = {
   language: state => state.app.language,
   menus: state => state.app.menus,
   profiles: state => state.app.profiles,
-  loadedSection: state => state.app.loadedSection
+  loading: state => state.app.loading,
+  tag: state => state.app.tag
 }
 export default getters

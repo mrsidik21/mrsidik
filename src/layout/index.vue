@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div id="layout" class="layout">
     <navigation ref="navigation"/>
     <div class="content">
       <Home />

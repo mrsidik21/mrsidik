@@ -1,17 +1,22 @@
 <template>
   <div
-    :class="[
-      'container relative z-1 fade-animate',
-      { 'is-active': !loading }
-    ]">
-    <h1 :id="idElement">
+    class="container relative z-1">
+    <h1>
       {{ profiles.name }}
     </h1>
-    <p>
-      {{ wordOne }}
-      <span>{{ typer }}</span><span
-      :class="['typed-cursor', { 'typed-cursor--blink': activeBlink }]">|</span>
-    </p>
+    <div class="typer">
+      <div class="inline-block text">{{ wordOne }}</div>
+      <div
+        :class="[
+          'inline-block',
+          'primary typer-cursor',
+          {
+            'animation-typer-id': language === 'id',
+            'animation-typer':  language === 'en'
+          }
+        ]">
+          {{ wordTwo }}</div>
+    </div>
 
     <div class="social-media relative z-1">
       <a

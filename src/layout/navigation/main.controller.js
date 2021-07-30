@@ -5,13 +5,15 @@ export default {
       menus: this.$store.getters.menus || [],
       activeMobile: false,
       activeTriggerMenu: false,
-      activeTag: '',
       showMenu: false
     }
   },
   computed: {
     lang() {
       return this.$store.getters.language
+    },
+    activeTag() {
+      return this.$store.getters.tag
     }
   },
   watch: {
@@ -22,9 +24,6 @@ export default {
           this.showingHideMenu()
         }
       }
-    },
-    $route(to) {
-      this.activeTag = to.hash
     }
   },
   created() {
@@ -35,8 +34,7 @@ export default {
   },
   methods: {
     async handleResize(e) {
-      this.activeTag = this.$route.hash
-      if (!this.activeTag) this.activeTag = '#hero'
+      if (!this.activeTag) this.$store.dispatch('setTag', '#hero')
       let width = e.innerWidth
       if (!e.innerWidth) width = e.target.innerWidth
       if (width <= 768) {
@@ -58,23 +56,12 @@ export default {
     },
 
     async handleClickLink(menu) {
+      this.$store.dispatch('setLoading', true)
       const text = menu === 'home' ? '#hero' : '#'+ menu
       if (text === this.activeTag) {
         return
       }
-      this.scrollingTo(text)
-      await this.delay(300)
-      this.$router.push({
-        path: '',
-        hash: text
-      })
-    },
-
-    async scrollingTo(text) {
-      const source = document.querySelector(text)
-      if (source) {
-        document.querySelector('.layout').scrollTo(0, (source.offsetTop))
-      }
+      this.$store.dispatch('setTag', text)
     },
 
     showingHideMenu() {
@@ -91,7 +78,6 @@ export default {
     selectingLang(lang) {
       this.$store.dispatch('setLanguage', lang)
       this.showMenu = false
-      location.reload()
     }
   }
 }

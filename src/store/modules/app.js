@@ -1,22 +1,19 @@
 import { Menus } from '@/utils/menus'
 import { Profiles } from '@/utils/profiles'
+import i18n from '@/lang'
 const app = {
   state: {
     language: localStorage.language ? localStorage.language : 'en',
     menus: localStorage.menus ? JSON.parse(localStorage.menus) : Menus,
     profiles: localStorage.profiles ? JSON.parse(localStorage.profiles) : Profiles,
-    loadedSection: {
-      hero: false,
-      about: false,
-      resume: false,
-      page: false,
-      contact: false
-    }
+    loading: true,
+    tag:'#hero'
   },
   mutations: {
     SET_LANGUAGE: (state, language) => {
       state.language = language
       localStorage.language = language
+      i18n.locale = language
     },
     SET_MENUS: (state, menus) => {
       state.menus = menus
@@ -26,8 +23,11 @@ const app = {
       state.profiles = menus
       localStorage.profiles = JSON.stringify(state.profiles)
     },
-    SET_LOADED_SECTION: (state, loadedSection) => {
-      state.loadedSection = loadedSection
+    SET_LOADING: (state, loading) => {
+      state.loading = loading
+    },
+    SET_TAG: (state, tag) => {
+      state.tag = tag
     }
   },
   actions: {
@@ -40,8 +40,11 @@ const app = {
     setProfiles ({ commit }, profiles) {
       commit('SET_PROFILES', profiles)
     },
-    setLoadedSection ({ commit }, loadedSection) {
-      commit('SET_LOADED_SECTION', loadedSection)
+    setLoading ({ commit }, loading) {
+      commit('SET_LOADING', loading)
+    },
+    setTag ({ commit }, tag) {
+      commit('SET_TAG', tag)
     }
   }
 }

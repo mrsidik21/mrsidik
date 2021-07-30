@@ -4,42 +4,20 @@ export default {
   data() {
     return {
       profiles: this.$store.getters.profiles,
-      language: this.$store.getters.language,
       loading: true,
     }
   },
   computed: {
-    isLoaded() {
-      return this.$store.getters.loadedSection.hero
-    },
-    isTagMy() {
-      return this.$route.hash === '#about'
-    },
     isMobile() {
       return this.$parent.$parent.$refs.navigation.activeMobile || window.innerWidth <= 768
+    },
+    language() {
+      return this.$store.getters.language
     }
   },
   watch: {
     language: {
-      handler(val) {
-        this.language = val
-      },
-      immediate: true
-    },
-    isTagMy: {
-      async handler(val) {
-        if (!this.$store.getters.loadedSection.about) {
-          if (val) {
-            const data = { ...this.$store.getters.loadedSection, about: true }
-            this.$store.dispatch('setLoadedSection', data)
-            this.loading = true
-            await this.delay(300)
-            this.loading = false
-          } else {
-            this.loading = true
-          }
-        }
-      },
+      handler() {},
       immediate: true
     }
   },

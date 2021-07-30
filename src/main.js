@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import i18n from './lang'
 import store from './store'
 import SidikComponents from './components/index'
@@ -14,7 +13,6 @@ Vue.use(SidikComponents)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   store,
   i18n,
   render: h => h(App),

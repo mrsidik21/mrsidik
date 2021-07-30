@@ -28,7 +28,8 @@ export default {
     download_resume: 'Download resume'
   },
   greeting: {
-  	profession: 'I\'m a Accountant'
+  	profession_one: 'I\'m a',
+    profession_two: 'Accountant'
   },
   about: {
     title_description: 'I\'m a graduate of Computerized Accounting at the Piksi Ganesha Polytechnic Bandung. During my education from elementary school to college, I was always active in organizing to increase my insight and knowledge, expand relationships and networks as well as a means train mentally as a provision for me to looking a job'

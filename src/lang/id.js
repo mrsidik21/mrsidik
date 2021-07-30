@@ -28,7 +28,8 @@ export default {
     download_resume: 'Unduh resume'
   },
   greeting: {
-  	profession: 'Saya seorang Akuntan'
+    profession_one: 'Saya seorang',
+    profession_two: 'Akuntan'
   },
   about: {
     title_description: 'Saya lulusan Komputerisasi Akuntansi di Politeknik Piksi Ganesha Bandung. Selama pendidikan Saya dari SD sampai perguruan tinggi, Saya selalu aktif berorganisasi untuk menambah wawasan dan pengetahuan Saya, memperluas relasi dan jaringan serta sebagai sarana melatih mental sebagai bekal Saya untuk mencari kerja.'

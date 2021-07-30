@@ -3,36 +3,30 @@ export default {
   data() {
     return {
       menus: this.$store.getters.menus,
-      loading: true
-    }
-  },
-  watch: {
-    $route(to) {
-      // this.scrollingTo(to.hash)
     }
   },
   computed: {
     hashTag() {
-      return this.$route.hash
+      return this.$store.getters.tag
+    },
+    loading() {
+      return this.$store.getters.loading
     }
   },
-  async mounted() {
-    this.handleResize(window)
-  },
-  async mounted() {
-    this.loading = true
-    await this.delay(300)
-    this.loading = false
-    this.scrollingTo(this.hashTag)
+  watch: {
+    loading: {
+      async handler(val) {
+        await this.delay(1000)
+        this.$store.dispatch('setLoading', false)
+        this.scrollingTo(this.hashTag)
+      },
+      immediate: true
+    }
   },
   methods: {
     replaceTag(link) {
       const text = link
       return text.replace('#', '')
-    },
-    handleLoading(e) {
-      // console.log(this.$parent)
-      // this.$parent.$el.scrollTop = e.target.getBoundingClientRect().top
     },
     delay (time) {
       return new Promise((resolve, reject) => {
@@ -43,6 +37,7 @@ export default {
       this.$refs.gallery.showingModal(data)
     },
     async scrollingTo(text) {
+      console.log(text)
       if (!text) return
       const source = document.querySelector(text)
       if (source) {

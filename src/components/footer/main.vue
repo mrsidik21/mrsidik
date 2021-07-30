@@ -1,8 +1,6 @@
 <template>
   <transition name="slide-fade">
-    <div
-      v-if="!loading"
-      class="container relative z-1 mt-56">
+    <div class="container relative z-1 mt-56">
       <div class="text-center">
         <h3>{{ profiles.name }}</h3>
       </div>

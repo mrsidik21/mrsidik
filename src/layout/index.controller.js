@@ -12,13 +12,9 @@ export default {
       menus: this.$store.getters.menus
     }
   },
-  destroyed() {
-    document.querySelector('.layout').removeEventListener('scroll', this.handleScroll, false)
-    document.querySelector('.layout').removeEventListener('resize', this.handleResize, false)
-  },
   mounted() {
-    document.querySelector('.layout').addEventListener('scroll', this.handleScroll, false)
-    document.querySelector('.layout').addEventListener('resize', this.handleResize, false)
+    const element = document.getElementById('layout')
+    element.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     delay (time) {
@@ -26,40 +22,25 @@ export default {
         setTimeout(resolve, time)
       })
     },
-    handleResize(e) {
-      this.handleScroll(e)
-    },
-    async handleScroll(e) {
-      const hero = document.querySelector('#hero').offsetTop
-      const about = document.querySelector('#about').offsetTop
-      const resume = document.querySelector('#resume').offsetTop
-      const portofolio = document.querySelector('#portofolio').offsetTop
-      const contact = document.querySelector('#contact').offsetTop
-      if (this.timer !== null) {
-        clearTimeout(this.timer);  
+    handleScroll(e) {
+      const links = [...document.getElementsByClassName('link-web')]
+      const active = [...links].find(x => x.className.includes('is-active'))
+      const key = [...links].findIndex(x => x.className.includes('is-active'))
+
+      if (!active.hash) return
+
+      const secitonActive = document.querySelector(active.hash).getBoundingClientRect()
+
+      if (secitonActive.height < e.target.scrollTop && (secitonActive.top + secitonActive.height) > e.target.scrollTop) {
+        console.log('OK')
+        /*
+        active.classList.remove('is-active')
+        const nextActive = [...links][key + 1]
+        if (nextActive) {
+          nextActive.classList.add('is-active')
+        }
+        */
       }
-      this.timer = setTimeout((menus = this.menus, length = e.target.scrollTop, active = this.$route.hash, router = this.$router) => {  
-        if (length < about && active !== '#hero') {
-          router.push({ path: '/#hero' })
-          return
-        }
-        if (length > about && length < resume && active !== '#about') {
-          router.push({ path: '/#about' })
-          return
-        }
-        if (length > resume && length < portofolio && active !== '#resume') {
-          router.push({ path: '/#resume' })
-          return
-        }
-        if (length > portofolio && length < contact && active !== '#portofolio') {
-          router.push({ path: '/#portofolio' })
-          return
-        }
-        if (length >= (contact - 800) && active !== '#contact') {
-          router.push({ path: '/#contact' })
-          return
-        }
-      }, 300);
     }
   }
 }

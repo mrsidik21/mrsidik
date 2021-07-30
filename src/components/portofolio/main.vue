@@ -1,9 +1,5 @@
 <template>
-  <div
-    :class="[
-      'container relative z-1 fade-animate-bottom',
-      { 'is-active': !loading }
-    ]">
+  <div class="container relative z-1">
     <div class="section-title mb-56">
       <h2 :id="$t('label.portofolio')">{{ $t('label.portofolio') }}</h2>
     </div>

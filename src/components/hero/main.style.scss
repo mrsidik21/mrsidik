@@ -8,27 +8,67 @@
 .relative {
   position: relative;
 }
+.inline-block {
+  font-size: inherit;
+  color: initial;
+  display: inline-block;
+}
 h1 {
   font-size: 56px;
   color: #45505b;
 }
-p {
-  font-size: 26px;
+.text {
   color: #45505b;
+}
+.primary {
+  color: #0563bb;
+}
+.typer {
+  font-size: 26px;
   margin-top: 12px;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.typer-cursor {
+  border-right: 3px solid #0563bb;
+  overflow: hidden;
+  margin-left: 8px;
+}
+.animation-typer {
+  animation:
+    typeranimation 6s steps(21) .4s infinite normal,
+    blinkanimation 500ms steps(142) infinite normal;
+}
+.animation-typer-id {
+  animation:
+    typeranimationid 6s steps(20) .4s infinite normal,
+    blinkanimation 500ms steps(142) infinite normal;
+}
+@keyframes typeranimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 130px;
+  }
+}
+@keyframes typeranimationid {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+@keyframes blinkanimation {
+  from { border-color: #0563bb; }
+  to { border-color: transparent; }
 }
 span {
   color: #0563bb;
   letter-spacing: 1px;
-}
-.typed-cursor {
-  opacity: 1;
-}
-.typed-cursor--blink {
-  animation-name: typedBlink;
-  animation-duration: .6s;
-  animation-iteration-count: infinite;
 }
 .social-media {
   margin-top: 30px;
@@ -67,7 +107,7 @@ span {
   h1 {
     font-size: 32px;
   }
-  p {
+  .typer {
     font-size: 20px;
     margin-top: 10px;
   }
