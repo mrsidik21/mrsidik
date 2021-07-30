@@ -32,7 +32,7 @@
       </div>
       <div class="col flex-1 row keep-flex justify-center items-center">
         <div class="py-2md">
-          <img src="/static/img/sidik about.jpeg" width="320" />
+          <img src="@/assets/img/sidik about.jpeg" width="320" />
         </div>
       </div>
     </div>

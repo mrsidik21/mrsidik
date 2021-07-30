@@ -125,12 +125,8 @@
   }
 }
 .img-fluid {
-  width: calc(100% - 30px);
+  width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
 }
 .portofolio-name {
   margin: 0 15px;

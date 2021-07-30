@@ -26,45 +26,45 @@
           :key="'port' + n"
           :class="{ 'is-hidden': !portofolio.active }"
           class="col lg-3 portofolio my-8">
-          <div
+          <img
             v-if="portofolio.img.includes('1.Pelaksana_001.jpg')"
             :key="n"
-            style="background-image: url('/static/img/1.Pelaksana_001.jpg');"
+            src="@/assets/img/1.Pelaksana_001.jpg"
             class="img-fluid"
           />
 
-          <div
+          <img
             v-if="portofolio.img.includes('2.Menengah_001.jpg')"
             :key="n"
-            style="background-image: url('/static/img/2.Menengah_001.jpg');"
+            src="@/assets/img/2.Menengah_001.jpg"
             class="img-fluid"
           />
 
-          <div
+          <img
             v-if="portofolio.img.includes('3.Lanjutan_001.jpg')"
             :key="n"
-            style="background-image: url('/static/img/3.Lanjutan_001.jpg');"
+            src="@/assets/img/3.Lanjutan_001.jpg"
             class="img-fluid"
           />
 
-          <div
+          <img
             v-if="portofolio.img.includes('sertifikat excle_001.jpg')"
             :key="n"
-            style="background-image: url('/static/img/sertifikat excle_001.jpg');"
+            src="@/assets/img/sertifikat excle_001.jpg"
             class="img-fluid"
           />
 
-          <div
+          <img
             v-if="portofolio.img.includes('Scan Brevet_001.jpg')"
             :key="n"
-            style="background-image: url('/static/img/Scan Brevet_001.jpg');"
+            src="@/assets/img/Scan Brevet_001.jpg"
             class="img-fluid"
           />
 
-          <div
+          <img
             v-if="portofolio.img.includes('sertifikat akuntansi_001.jpg')"
             :key="n"
-            style="background-image: url('/static/img/sertifikat akuntansi_001.jpg');"
+            src="@/assets/img/sertifikat akuntansi_001.jpg"
             class="img-fluid"
           />
           <div class="portofolio-wrap">

@@ -7,7 +7,7 @@
 
     <div class="row">
       <div class="col max-w-320">
-        <img src="/static/img/Web Projek Photo Resume.jpg" class="img-fluids" />
+        <img src="@/assets/img/Web Projek Photo Resume.jpg" class="img-fluids" />
       </div>
       <div class="col text-left">
         <h3>{{ $t('degree.name') }}</h3>

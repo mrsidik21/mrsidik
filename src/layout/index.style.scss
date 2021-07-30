@@ -5,4 +5,8 @@
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
+  .content {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
 }

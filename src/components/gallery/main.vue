@@ -37,58 +37,58 @@
                 <img
                   v-if="photo.includes('1.Pelaksana_001.jpg')"
                   :key="n"
-                  src="/static/img/1.Pelaksana_001.jpg"
+                  src="@/assets/img/1.Pelaksana_001.jpg"
                 />
                 <img
                   v-if="photo.includes('1.Pelaksana_002.jpg')"
                   :key="n"
-                  src="/static/img/1.Pelaksana_002.jpg"
+                  src="@/assets/img/1.Pelaksana_002.jpg"
                 />
 
                 <img
                   v-if="photo.includes('2.Menengah_001.jpg')"
                   :key="n"
-                  src="/static/img/2.Menengah_001.jpg"
+                  src="@/assets/img/2.Menengah_001.jpg"
                 />
                 <img
                   v-if="photo.includes('2.Menengah_002.jpg')"
                   :key="n"
-                  src="/static/img/2.Menengah_002.jpg"
+                  src="@/assets/img/2.Menengah_002.jpg"
                 />
 
                 <img
                   v-if="photo.includes('3.Lanjutan_001.jpg')"
                   :key="n"
-                  src="/static/img/3.Lanjutan_001.jpg"
+                  src="@/assets/img/3.Lanjutan_001.jpg"
                 />
                 <img
                   v-if="photo.includes('3.Lanjutan_002.jpg')"
                   :key="n"
-                  src="/static/img/3.Lanjutan_002.jpg"
+                  src="@/assets/img/3.Lanjutan_002.jpg"
                 />
 
                 <img
                   v-if="photo.includes('sertifikat excle_001.jpg')"
                   :key="n"
-                  src="/static/img/sertifikat excle_001.jpg"
+                  src="@/assets/img/sertifikat excle_001.jpg"
                 />
 
                 <img
                   v-if="photo.includes('sertifikat akuntansi_001.jpg')"
                   :key="n"
-                  src="/static/img/sertifikat akuntansi_001.jpg"
+                  src="@/assets/img/sertifikat akuntansi_001.jpg"
                 />
 
                 <img
                   v-if="photo.includes('Scan Brevet_001.jpg')"
                   :key="n"
-                  src="/static/img/Scan Brevet_001.jpg"
+                  src="@/assets/img/Scan Brevet_001.jpg"
                 />
 
                 <img
                   v-if="photo.includes('Scan Brevet_002.jpg')"
                   :key="n"
-                  src="/static/img/Scan Brevet_002.jpg"
+                  src="@/assets/img/Scan Brevet_002.jpg"
                 />
               </template>
             </div>
