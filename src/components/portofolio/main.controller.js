@@ -36,10 +36,7 @@ export default {
   },
   methods: {
     async handleFilter(e) {
-      this.loading = true
       this.$store.dispatch('setScroll', false)
-      await this.delay(300)
-      this.loading = false
       await this.delay(500)
       this.$store.dispatch('setScroll', true)
       this.activeFilter = parseInt(e.target.type)

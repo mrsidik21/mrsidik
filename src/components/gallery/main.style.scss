@@ -85,7 +85,6 @@ img {
 }
 .modal-trigger-slide {
   position: fixed;
-  z-index: 21;
   top: 50%;
   font-size: 32px;
   color: rgb(182, 182, 182);
@@ -93,10 +92,11 @@ img {
   cursor: pointer;
   &.next {
     right: 40px;
+    transform: rotate(0deg) translateY(-50%);
   }
   &.prev {
     left: 40px;
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(50%);
   }
 }
 @media screen and (max-width: 768px) {

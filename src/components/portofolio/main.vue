@@ -11,6 +11,7 @@
             v-for="(filter, n) in profiles.filters"
             :key="n"
             :class="{'is-active': filter.type === activeFilter }"
+            :type="filter.type"
             role="button"
             @click="handleFilter">
             {{ filter[language] }}
@@ -80,34 +81,6 @@
         </div>
       </template>
     </transition-group>
-
-    <!--
-    <transition name="scale" tag="div" >
-      <div v-if="!loading" class="row">
-        <div
-          v-for="(portofolio, n) in portofolioFiltered"
-          :key="'port' + n"
-          class="col portofolio my-8">
-          <img
-            :src="`/mrsidik/static/${portofolio.img}`"
-            class="img-fluid"
-          />
-          
-          <div class="portofolio-wrap">
-            <div class="portofolio-info">
-              <div class="portofolio-name">
-                <h4> {{ portofolio.name }} </h4>
-                <p class="my-8 font-sm">{{ portofolio.publisher }}</p>
-                <a class="link-view" @click.stop.prevent="showDetail(portofolio)">
-                  view
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
-    -->
   </div>
 </template>
 <script>
