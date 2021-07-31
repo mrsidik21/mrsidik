@@ -180,6 +180,9 @@ h4 {
   }
 }
 @media screen and (max-width: 768px) {
+  .img-fluid {
+    height: auto;
+  }
   .lg-2 {
     min-width: calc(100% - 30px);
   }
