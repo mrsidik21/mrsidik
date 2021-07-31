@@ -20,12 +20,12 @@
       </div>
     </div>
 
-    <transition-group name="scale" tag="div" class="row relative text-center">
+    <transition-group name="slide-fade" tag="div" class="row relative text-center">
       <template
         v-for="(portofolio, n) in portofolioFiltered">
         <div
           :key="'port' + n"
-          class="col lg-3 portofolio my-8">
+          class="col portofolio my-8">
           <img
             v-if="portofolio.img.includes('1.Pelaksana_001.jpg')"
             :key="n"
