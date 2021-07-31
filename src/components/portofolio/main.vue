@@ -10,7 +10,7 @@
           <li
             v-for="(filter, n) in profiles.filters"
             :key="n"
-            :class="{'is-active': filter.type === filter }"
+            :class="{'is-active': filter.type === activeFilter }"
             role="button"
             @click="handleFilter">
             {{ filter[language] }}
