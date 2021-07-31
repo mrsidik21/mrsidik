@@ -27,7 +27,7 @@
           :key="'port' + n"
           class="col portofolio my-8">
           <img
-            :src="`/mrsidik/static/img/${portofolio.img}`"
+            :src="`/mrsidik/static/${portofolio.img}`"
             class="img-fluid"
           />
           
