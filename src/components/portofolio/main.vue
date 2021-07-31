@@ -28,16 +28,30 @@
             :class="{ 'is-hidden': !portofolio.active }"
             class="col portofolio my-8">
             <div
-              :class="[
-                'img-fluid',
-                { 'sk-akuntansi': portofolio.class === 'sk-akuntansi' },
-                { 'sk-excle': portofolio.class === 'sk-excle' },
-                { 'ks-brevet': portofolio.class === 'ks-brevet' },
-                { 'ak-pelaksana': portofolio.class === 'ak-pelaksana' },
-                { 'ak-menengah': portofolio.class === 'ak-menengah' },
-                { 'ak-lanjutan': portofolio.class === 'ak-lanjutan' }
-              ]"
+              v-if="portofolio.class === 'sk-akuntansi'"
+              class="img-fluid sk-akuntansi"
             />
+            <div
+              v-else-if="portofolio.class === 'sk-excle'"
+              class="img-fluid sk-excle"
+            />
+            <div
+              v-else-if="portofolio.class === 'ks-brevet'"
+              class="img-fluid ks-brevet"
+            />
+            <div
+              v-else-if="portofolio.class === 'ak-pelaksana'"
+              class="img-fluid ak-pelaksana"
+            />
+            <div
+              v-else-if="portofolio.class === 'ak-menengah'"
+              class="img-fluid ak-menengah"
+            />
+            <div
+              v-else-if="portofolio.class === 'ak-lanjutan'"
+              class="img-fluid ak-lanjutan"
+            />
+            
             <div class="portofolio-wrap">
               <div class="portofolio-info">
                 <div class="portofolio-name">
