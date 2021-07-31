@@ -72,8 +72,18 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: -.15em;
 }
 section {
-  padding: 60px 0;
-  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column;
+  // padding: 60px 0;
+  // overflow: hidden;
+}
+section > div {
+  margin: 60px 15px;
+  // width: 100%;
+  height: calc(100% - 120px);
 }
 
 
@@ -119,5 +129,11 @@ section {
   &.is-active {
     opacity: 1;
     transform: translate(0, 0);
+  }
+}
+@media screen and (max-width: 768px) {
+  section > div {
+    margin: 0 auto;
+    text-align: center;
   }
 }

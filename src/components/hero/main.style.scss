@@ -1,13 +1,4 @@
-.container {
-  padding: 0 15px;
-  width: calc(100% - 30px);
-}
-.z-1 {
-  z-index: 1;
-}
-.relative {
-  position: relative;
-}
+
 .inline-block {
   font-size: inherit;
   color: initial;
@@ -100,10 +91,6 @@ span {
   opacity: 0;
 }
 @media screen and (max-width: 768px) {
-  .container {
-    width: auto;
-    text-align: center;
-  }
   h1 {
     font-size: 32px;
   }

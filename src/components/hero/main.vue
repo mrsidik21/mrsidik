@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="container relative z-1">
+  <div>
     <h1>
       {{ profiles.name }}
     </h1>

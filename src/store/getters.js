@@ -3,6 +3,7 @@ const getters = {
   menus: state => state.app.menus,
   profiles: state => state.app.profiles,
   loading: state => state.app.loading,
-  tag: state => state.app.tag
+  tag: state => state.app.tag,
+  scroll: state => state.app.scroll
 }
 export default getters

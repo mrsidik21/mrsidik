@@ -56,12 +56,15 @@ export default {
     },
 
     async handleClickLink(menu) {
+      this.$store.dispatch('setScroll', false)
       this.$store.dispatch('setLoading', true)
       const text = menu === 'home' ? '#hero' : '#'+ menu
       if (text === this.activeTag) {
         return
       }
       this.$store.dispatch('setTag', text)
+      await this.delay(5000)
+      this.$store.dispatch('setScroll', true)
     },
 
     showingHideMenu() {

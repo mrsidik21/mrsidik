@@ -7,7 +7,8 @@ const app = {
     menus: localStorage.menus ? JSON.parse(localStorage.menus) : Menus,
     profiles: localStorage.profiles ? JSON.parse(localStorage.profiles) : Profiles,
     loading: true,
-    tag:'#hero'
+    tag:'#hero',
+    scroll: true
   },
   mutations: {
     SET_LANGUAGE: (state, language) => {
@@ -21,13 +22,16 @@ const app = {
     },
     SET_PROFILES: (state, menus) => {
       state.profiles = menus
-      localStorage.profiles = JSON.stringify(state.profiles)
+      // localStorage.profiles = JSON.stringify(state.profiles)
     },
     SET_LOADING: (state, loading) => {
       state.loading = loading
     },
     SET_TAG: (state, tag) => {
       state.tag = tag
+    },
+    SET_SCROLL: (state, scroll) => {
+      state.scroll = scroll
     }
   },
   actions: {
@@ -45,6 +49,9 @@ const app = {
     },
     setTag ({ commit }, tag) {
       commit('SET_TAG', tag)
+    },
+    setScroll({ commit }, scroll) {
+      commit('SET_SCROLL', scroll)
     }
   }
 }

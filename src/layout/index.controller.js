@@ -18,6 +18,21 @@ export default {
     },
     loading() {
       return this.$store.getters.loading
+    },
+    scroll() {
+      return this.$store.getters.scroll
+    }
+  },
+  watch: {
+    scroll: {
+      handler(val) {
+        const element = document.getElementById('layout')
+        if (!val) {
+          element.removeEventListener('scroll', this.handleScroll)
+        } else {
+          element.addEventListener('scroll', this.handleScroll)
+        }
+      }
     }
   },
   mounted() {
@@ -43,17 +58,10 @@ export default {
 
         const targetOffsetTop = target.offsetTop
 
-        link.classList.remove('is-active')
-
         if (name !== this.activeTag && target) {
           const conditionOne = targetOffsetTop <= e.target.scrollTop
           const conditionTwo = (targetOffsetTop + target.offsetHeight) > e.target.scrollTop
           if (conditionOne && conditionTwo) {
-            link.classList.add('is-active')
-            this.$store.dispatch('setTag', name)
-          }
-        } else {
-          if (name === this.activeTag) {
             link.classList.add('is-active')
             this.$store.dispatch('setTag', name)
           }

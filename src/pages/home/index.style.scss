@@ -1,9 +1,10 @@
 #hero {
   width: 100%;
-  height: calc(100vh - 120px);
   background: url('~@/assets/img/Web Project Photo Home.jpg') top right no-repeat;
   background-size: cover;
   position: relative;
+  /*
+  height: calc(100vh - 120px);
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -19,8 +20,8 @@
     right: 0;
     z-index: 0;
   }
+  */
 }
-
 #about,
 #resume,
 #portofolio,
@@ -43,6 +44,9 @@ footer {
     transition: transform .3s ease-in-out;
   }
   // margin-left: 160px;
+}
+#hero {
+  // height: 100vh;
 }
 @media screen and (min-width: 769px) {
   #hero,

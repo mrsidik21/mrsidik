@@ -1,5 +1,5 @@
 <template>
-  <div class="container relative z-1">
+  <div>
     <div class="section-title mb-56">
       <h2 :id="$t('label.portofolio')">{{ $t('label.portofolio') }}</h2>
     </div>
