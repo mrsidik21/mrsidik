@@ -1,5 +1,7 @@
 <template>
   <div>
+    <img v-if="icon" src="@/assets/img/ico.png"/>
+
     <sidik-loading :loading="loading" />
 
     <sidik-gallery ref="gallery" />

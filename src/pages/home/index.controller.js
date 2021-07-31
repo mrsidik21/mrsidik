@@ -11,6 +11,9 @@ export default {
     },
     loading() {
       return this.$store.getters.loading
+    },
+    icon() {
+      return false
     }
   },
   watch: {
@@ -37,7 +40,6 @@ export default {
       this.$refs.gallery.showingModal(data)
     },
     async scrollingTo(text) {
-      console.log(text)
       if (!text) return
       const source = document.querySelector(text)
       if (source) {
