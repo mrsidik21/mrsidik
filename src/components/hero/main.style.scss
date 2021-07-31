@@ -108,7 +108,34 @@ span {
     font-size: 32px;
   }
   .typer {
+    justify-content: center;
     font-size: 20px;
     margin-top: 10px;
+  }
+  .animation-typer {
+    animation:
+      typeranimation 6s steps(21) .4s infinite normal,
+      blinkanimation 500ms steps(142) infinite normal;
+  }
+  .animation-typer-id {
+    animation:
+      typeranimationid 6s steps(20) .4s infinite normal,
+      blinkanimation 500ms steps(142) infinite normal;
+  }
+  @keyframes typeranimation {
+    from {
+      width: 0;
+    }
+    to {
+      width: 110px;
+    }
+  }
+  @keyframes typeranimationid {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80px;
+    }
   }
 }

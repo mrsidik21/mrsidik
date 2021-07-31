@@ -31,9 +31,11 @@ export default {
       })
     },
     handleScroll(e) {
-      const links = [...document.getElementsByClassName('link-web')]
+      const links = [...document.getElementsByClassName('link-web'), ...document.getElementsByClassName('link-mobile')]
 
-      links.map((link, key) => {
+      if (!!!links && !!!Array.isArray(links) && !!!links.length) return
+
+      links.map((link) => {
         const name = link.getAttribute('href')
         const target = document.getElementById(name.replace('#', ''))
 

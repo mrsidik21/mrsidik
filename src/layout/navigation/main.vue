@@ -52,10 +52,10 @@
       ]">
       <div class="left">
         <div class="dropdown">
-          <button v-if="!showMenu" class="dropdown-trigger capitalize text-lg" @click="showMenu = true">
+          <button v-if="!showMenu" class="dropdown-trigger capitalize text-lg no-background" @click="showMenu = true">
             <svg-icon :icon-class="lang"/>
           </button>
-          <button v-else class="dropdown-trigger capitalize text-lg" @click="showMenu = false">
+          <button v-else class="dropdown-trigger capitalize text-lg no-background" @click="showMenu = false">
             <svg-icon :icon-class="lang"/>
           </button>
           <div
