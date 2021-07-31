@@ -73,10 +73,10 @@
         </div>
       </div>
       <div class="col">
-        <a v-if="language === 'en'" href="https://drive.google.com/file/d/1DYYT-Q4Y3ihSH2Pkt3qGaKLU3AcULg1c/view?usp=sharing" class="btn-download" target="blank">
+        <a v-if="language === 'en'" href="https://drive.google.com/file/d/1cZObhqM0df10si-T13eSAC85sN-065Qi/view?usp=sharing" class="btn-download" target="blank">
           {{ $t('label.download_resume') }}
         </a>
-        <a v-if="language === 'id'" href="https://drive.google.com/file/d/1zrTMC1_o5u2CbHOLbRkmKJeopyrCb1x5/view?usp=sharing" class="btn-download" target="blank">
+        <a v-if="language === 'id'" href="https://drive.google.com/file/d/1oPcoy5tYycEf39D-gh_ZXYa_titMkiEQ/view?usp=sharing" class="btn-download" target="blank">
           {{ $t('label.download_resume') }}
         </a>
       </div>
