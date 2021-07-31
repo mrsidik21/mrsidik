@@ -28,7 +28,15 @@
             :class="{ 'is-hidden': !portofolio.active }"
             class="col portofolio my-8">
             <div
-              :class="['img-fluid', portofolio.class]"
+              :class="[
+                'img-fluid',
+                { 'sk-akuntansi': portofolio.class === 'sk-akuntansi' },
+                { 'sk-excle': portofolio.class === 'sk-excle' },
+                { 'ks-brevet': portofolio.class === 'ks-brevet' },
+                { 'ak-pelaksana': portofolio.class === 'ak-pelaksana' },
+                { 'ak-menengah': portofolio.class === 'ak-menengah' },
+                { 'ak-lanjutan': portofolio.class === 'ak-lanjutan' }
+              ]"
             />
             <div class="portofolio-wrap">
               <div class="portofolio-info">
