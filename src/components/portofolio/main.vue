@@ -10,7 +10,8 @@
           <li
             v-for="(filter, n) in profiles.filters"
             :key="n"
-            :class="{'is-active': filter.active }"
+            :type="filter.type"
+            :class="{ 'is-active': filter.type === activeFilter }"
             role="button"
             @click="handleFilter">
             {{ filter[language] }}
@@ -19,68 +20,30 @@
       </div>
     </div>
 
-    <transition-group name="fade" tag="div" class="row relative text-center">
-      <template
-        v-for="(portofolio, n) in portofolioFiltered">
-        <div
-          :key="'port' + n"
-          :class="{ 'is-hidden': !portofolio.active }"
-          class="col lg-3 portofolio my-8">
-          <img
-            v-if="portofolio.img.includes('1.Pelaksana_001.jpg')"
-            :key="n"
-            src="@/assets/img/1.Pelaksana_001.jpg"
-            class="img-fluid"
-          />
-
-          <img
-            v-if="portofolio.img.includes('2.Menengah_001.jpg')"
-            :key="n"
-            src="@/assets/img/2.Menengah_001.jpg"
-            class="img-fluid"
-          />
-
-          <img
-            v-if="portofolio.img.includes('3.Lanjutan_001.jpg')"
-            :key="n"
-            src="@/assets/img/3.Lanjutan_001.jpg"
-            class="img-fluid"
-          />
-
-          <img
-            v-if="portofolio.img.includes('sertifikat excle_001.jpg')"
-            :key="n"
-            src="@/assets/img/sertifikat excle_001.jpg"
-            class="img-fluid"
-          />
-
-          <img
-            v-if="portofolio.img.includes('Scan Brevet_001.jpg')"
-            :key="n"
-            src="@/assets/img/Scan Brevet_001.jpg"
-            class="img-fluid"
-          />
-
-          <img
-            v-if="portofolio.img.includes('sertifikat akuntansi_001.jpg')"
-            :key="n"
-            src="@/assets/img/sertifikat akuntansi_001.jpg"
-            class="img-fluid"
-          />
-          <div class="portofolio-wrap">
-            <div class="portofolio-info">
-              <div class="portofolio-name">
-                <h4> {{ portofolio.name }} </h4>
-                <p class="my-8 font-sm">{{ portofolio.publisher }}</p>
-                <a class="link-view" @click.stop.prevent="showDetail(portofolio)">
-                  view
-                </a>
+    <transition name="scale" tag="div" >
+      <div v-if="!loading" class="row">
+          <div
+            v-for="(portofolio, n) in portofolioFiltered"
+            :key="'port' + n"
+            :class="{ 'is-hidden': !portofolio.active }"
+            class="col portofolio my-8">
+            <div
+              :class="['img-fluid', portofolio.class]"
+            />
+            <div class="portofolio-wrap">
+              <div class="portofolio-info">
+                <div class="portofolio-name">
+                  <h4> {{ portofolio.name }} </h4>
+                  <p class="my-8 font-sm">{{ portofolio.publisher }}</p>
+                  <a class="link-view" @click.stop.prevent="showDetail(portofolio)">
+                    view
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </template>
-    </transition-group>
+      </div>
+    </transition>
   </div>
 </template>
 <script>

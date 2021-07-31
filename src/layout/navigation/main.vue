@@ -52,11 +52,11 @@
       ]">
       <div class="left">
         <div class="dropdown">
-          <button v-if="!showMenu" class="dropdown-trigger capitalize text-lg no-background" @click="showMenu = true">
-            <svg-icon :icon-class="lang"/>
+          <button v-if="!showMenu" class="dropdown-trigger uppercase no-background" @click="showMenu = true">
+            {{ lang }}
           </button>
-          <button v-else class="dropdown-trigger capitalize text-lg no-background" @click="showMenu = false">
-            <svg-icon :icon-class="lang"/>
+          <button v-else class="dropdown-trigger uppercase no-background" @click="showMenu = false">
+            {{ lang }}
           </button>
           <div
             :class="[
@@ -69,9 +69,6 @@
                 { 'is-active': lang === 'en' }
               ]"
               @click="selectingLang('en')">
-              <div class="icon">
-                <svg-icon icon-class="en"/>
-              </div>
               English
             </div>
             <div
@@ -80,9 +77,6 @@
                 { 'is-active': lang === 'id' }
               ]"
               @click="selectingLang('id')">
-              <div class="icon">
-                <svg-icon icon-class="id"/>
-              </div>
               Bahasa
             </div>
           </div>

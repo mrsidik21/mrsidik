@@ -85,7 +85,8 @@ section > div {
   // width: 100%;
   height: calc(100% - 120px);
 }
-section#contact {
+section#contact,
+section#portofolio {
   align-items: center;
 }
 
@@ -137,6 +138,10 @@ section#contact {
 @media screen and (max-width: 768px) {
   section > div {
     margin: 0 auto;
+    padding: 16px;
     text-align: center;
+  }
+  section#contact > div {
+    padding: 0;
   }
 }

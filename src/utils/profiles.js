@@ -181,6 +181,7 @@ export const Profiles = {
       publisher: 'Politeknik Piksi Ganesha',
       date: 'Okt 2015',
       img: '1.Pelaksana_001.jpg',
+      class: 'ak-pelaksana',
       photos: ['1.Pelaksana_001.jpg', '1.Pelaksana_002.jpg'],
       type: 1,
       active: true
@@ -190,6 +191,7 @@ export const Profiles = {
       publisher: 'Politeknik Piksi Ganesha',
       date: 'Okt 2016',
       img: '2.Menengah_001.jpg',
+      class: 'ak-menengah',
       photos: ['2.Menengah_001.jpg', '2.Menengah_002.jpg'],
       type: 1,
       active: true
@@ -199,6 +201,7 @@ export const Profiles = {
       publisher: 'Politeknik Piksi Ganesha',
       date: 'Okt 2017',
       img: '3.Lanjutan_001.jpg',
+      class: 'ak-lanjutan',
       photos: ['3.Lanjutan_001.jpg', '3.Lanjutan_002.jpg'],
       type: 1,
       active: true
@@ -208,6 +211,7 @@ export const Profiles = {
       publisher: 'Kormo Jobs Indonesia',
       date: 'Mar 2021',
       img: 'sertifikat excle_001.jpg',
+      class: 'sk-excle',
       photos: ['sertifikat excle_001.jpg'],
       type: 3,
       active: true
@@ -217,31 +221,17 @@ export const Profiles = {
       publisher: 'Kormo Jobs Indonesia',
       date: 'Mar 2021',
       img: 'sertifikat akuntansi_001.jpg',
+      class: 'sk-akuntansi',
       photos: ['sertifikat akuntansi_001.jpg'],
       type: 3,
       active: true
     },
-    /*
-    {
-      name: 'Memahami Konsep Dasar dan Prospek Karir di bidang Akuntansi',
-      publisher: 'Teddy Diego',
-      date: 'Jul 2021',
-      img: '',
-      type: 3
-    },
-    {
-      name: 'Praktek Excle',
-      publisher: 'Kormo Jobs Indonesia',
-      date: 'Jul 2021',
-      img: '',
-      type: 3
-    },
-    */
     {
       name: 'Brevet Pajak A&B',
       publisher: 'Ikatan Akuntansi Indonesia (IAI)',
       date: 'Mar 2021',
       img: 'Scan Brevet_001.jpg',
+      class: 'ks-brevet',
       photos: ['Scan Brevet_001.jpg', 'Scan Brevet_002.jpg'],
       type: 2,
       active: true
