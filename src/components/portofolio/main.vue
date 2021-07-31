@@ -27,29 +27,35 @@
             :key="'port' + n"
             :class="{ 'is-hidden': !portofolio.active }"
             class="col portofolio my-8">
-            <div
+            <img
               v-if="portofolio.class === 'sk-akuntansi'"
-              class="img-fluid sk-akuntansi"
+              src="@/assets/img/sertifikat akuntansi_001.jpg"
+              class="img-fluid"
             />
-            <div
+            <img
               v-else-if="portofolio.class === 'sk-excle'"
-              class="img-fluid sk-excle"
+              src="@/assets/img/sertifikat excle_001.jpg"
+              class="img-fluid"
             />
-            <div
+            <img
               v-else-if="portofolio.class === 'ks-brevet'"
-              class="img-fluid ks-brevet"
+              src="@/assets/img/Scan Brevet_001.jpg"
+              class="img-fluid"
             />
-            <div
+            <img
               v-else-if="portofolio.class === 'ak-pelaksana'"
-              class="img-fluid ak-pelaksana"
+              src="@/assets/img/1.Pelaksana_001.jpg"
+              class="img-fluid"
             />
-            <div
+            <img
               v-else-if="portofolio.class === 'ak-menengah'"
+              src="@/assets/img/2.Menengah_001.jpg"
               class="img-fluid ak-menengah"
             />
-            <div
+            <img
               v-else-if="portofolio.class === 'ak-lanjutan'"
-              class="img-fluid ak-lanjutan"
+              class="img-fluid"
+              src="@/assets/img/3.Lanjutan_001.jpg"
             />
             
             <div class="portofolio-wrap">
